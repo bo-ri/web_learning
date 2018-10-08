@@ -11,7 +11,6 @@ services:
     environment: 
       NB_UID: 500
       GRANT_SUDO: "yes"
-    command: start.sh jupyter lab
-    # command: start.sh jupyter lab --NotebookApp.password=
+    command: start.sh jupyter lab --NotebookApp.password='${JUPYTER_PASSWD}'
 
 

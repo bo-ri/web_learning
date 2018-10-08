@@ -15,3 +15,4 @@
 1. 一個上の行削除
 
 以降`$ docker-compose up -d`で起動，localhost:8888で接続
+`$ docker-compose down`で終了
