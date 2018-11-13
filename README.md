@@ -16,3 +16,10 @@
 
 以降`$ docker-compose up -d`で起動，localhost:8888で接続
 `$ docker-compose down`で終了
+
+
+## 任意のmodule追加する場合
+- Dockerfileに書く
+- pipなら`USER root`の上に追記
+- apt-getなら`USER root`の下に追記する
+- `$ docker-compose build`でbuildし直すと反映される．パスワードとかはそのまま．

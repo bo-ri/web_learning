@@ -2,7 +2,9 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 import numpy as np
 
-def plot_decision_regions(X, y, classifier, resolution=0.02):
+# def plot_decision_regions(X, y, classifier, resolution=0.02):
+# こっちの引数は三章でつかう
+def plot_decision_regions(X, y, classifier, test_idx=None, resolution=0.02):
   markers = ('s', 'x', 'o', '^', 'v')
   colors = ('red', 'blue', 'lightgreen', 'grey', 'cyan')
   cmap = ListedColormap(colors[:len(np.unique(y))])
@@ -26,6 +28,21 @@ def plot_decision_regions(X, y, classifier, resolution=0.02):
                 c=colors[idx],
                 label=cl,
                 edgecolor='black')
+  
+  # 3章以降で使用
+  if test_idx:
+    X_test, y_test = X[test_idx, :], y[test_idx]
+    plt.scatter(
+      X_test[:, 0], 
+      X_test[:, 1],
+      c='',
+      edgecolor='black',
+      alpha=1.0,
+      linewidth=1,
+      marker='o',
+      s=100,
+      label='test set'
+    )
 
 
 
